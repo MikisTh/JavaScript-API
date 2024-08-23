@@ -1,3 +1,5 @@
+// QuickSort
+
 const quickSort = (arr) => {
   if (arr.length <= 1) {
     return arr;
@@ -18,6 +20,39 @@ const quickSort = (arr) => {
   return [...quickSort(leftArr), pivot, ...quickSort(rightArr)];
 };
 
-// Example usage:
-const array = [3, 6, 8, 10, 1, 2, 1];
-console.log(quickSort(array)); // Output: [1, 1, 2, 3, 6, 8, 10]
+//QuickSortRecursivo
+function quickSortRecursive(arr, start, end) {
+      if (start >= end) {
+        return;
+    }       
+    let index = partition(arr, start, end);
+       
+  quickSort(arr, start, index - 1);
+  quickSort(arr, index + 1, end);
+}
+
+//QuickSortIterativo
+function quickSortIterative(arr) {    
+    stack = []; 
+    stack.push(0);
+    stack.push(arr.length - 1);
+    
+    while(stack[stack.length - 1] >= 0){
+             
+        end = stack.pop();
+        start = stack.pop();
+        
+        pivotIndex = partition(arr, start, end);
+        
+    
+        if (pivotIndex - 1 > start){
+            stack.push(start);
+            stack.push(pivotIndex - 1);
+        }
+        
+        if (pivotIndex + 1 < end){
+            stack.push(pivotIndex + 1);
+            stack.push(end);
+        }
+    }
+}
