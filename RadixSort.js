@@ -10,3 +10,5 @@ function radixSort(nums) {
   }
   return nums;
 }
+
+//Exemplos de aplicação?
