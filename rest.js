@@ -5,7 +5,6 @@ rest('/').then(function(response) {
 });
 
 
-
 function soma (...valores) {
     var total = 0
 
@@ -109,7 +108,7 @@ function filterBy(type, ...args) {
     });
   }
 
-  
+
 // Uma requisição é feita ao back-end, informando a URL e o verbo HTTP.
 // De acordo com a URL e o verbo HTTP, a API realiza uma ação.
 // A API retorna os dados no formato JSON.
